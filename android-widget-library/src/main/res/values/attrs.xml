@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ClearEditText">
+        <attr name="clear_icon" format="reference" />
+    </declare-styleable>
+    <!--流式布局-->
+    <declare-styleable name="FlowLayout">
+        <!--水平方向View之间的间隙-->
+        <attr name="horizontal_spacing" format="dimension" />
+        <!--行之间的间隙-->
+        <attr name="vertical_spacing" format="dimension" />
+    </declare-styleable>
+    <!--圆形ImageView-->
+    <declare-styleable name="CircleImageView">
+        <!--边框的宽度-->
+        <attr name="border_width" format="dimension" />
+        <!--边框的颜色-->
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+    </declare-styleable>
+</resources>

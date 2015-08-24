@@ -1,0 +1,1 @@
+include ':app', ':android-utils-library', ':android-widget-library'
