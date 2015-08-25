@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-utils-library\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-utils-library\build\intermediates\pre-dexed\androidTest\debug\classes-9f09c439bb2b1997ec1482e88c136ad4635a0822.jar" />
+    </item>
+    <item
+        jar="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-utils-library\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-utils-library\build\intermediates\pre-dexed\androidTest\debug\internal_impl-22.2.1-5e2198294e42e4469548775a7fbf59cf957dd4a5.jar" />
+    </item>
+    <item
+        jar="C:\Program Files\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-utils-library\build\intermediates\pre-dexed\androidTest\debug\support-annotations-22.2.1-47cbf2c9c4cda5abab44f362d4cf6e83ad6e271b.jar" />
+    </item>
+    <item
+        jar="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-utils-library\build\intermediates\bundles\debug\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73d4446f1eeab84f43c42eb84c9ee09f1bd1f473">
+        <dex dex="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-utils-library\build\intermediates\pre-dexed\androidTest\debug\classes-9b4eaa33274b5d03d3a8613597b8f3c8f9d2a32e.jar" />
+    </item>
+    <item
+        jar="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-utils-library\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-utils-library\build\intermediates\pre-dexed\androidTest\debug\classes-5589a201a4e71d5c79acd956e7ee758ca0dc9f51.jar" />
+    </item>
+
+</items>

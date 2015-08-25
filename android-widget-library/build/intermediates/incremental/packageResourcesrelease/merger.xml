@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-widget-library\src\main\res"><file path="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-widget-library\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">Android-Widget-Library</string></file><file path="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-widget-library\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="ClearEditText">
+        <attr format="reference" name="clear_icon"/>
+    </declare-styleable><declare-styleable name="FlowLayout">
+        <!--水平方向View之间的间隙-->
+        <attr format="dimension" name="horizontal_spacing"/>
+        <!--行之间的间隙-->
+        <attr format="dimension" name="vertical_spacing"/>
+    </declare-styleable><declare-styleable name="CircleImageView">
+        <!--边框的宽度-->
+        <attr format="dimension" name="border_width"/>
+        <!--边框的颜色-->
+        <attr format="color" name="border_color"/>
+        <attr format="boolean" name="border_overlay"/>
+    </declare-styleable></file></source><source path="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-widget-library\build\generated\res\rs\release"/><source path="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-widget-library\build\generated\res\resValues\release"/></dataSet><dataSet config="release"><source path="D:\develop_dir\testspace\studio\Android-Develop-Aar\android-widget-library\src\release\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/><attr format="boolean" name="border_overlay"/></declare-styleable><declare-styleable name="FlowLayout"><attr format="dimension" name="horizontal_spacing"/><attr format="dimension" name="vertical_spacing"/></declare-styleable><declare-styleable name="ClearEditText"><attr format="reference" name="clear_icon"/></declare-styleable></configuration></mergedItems></merger>
