@@ -1,9 +1,11 @@
-package com.qjay.test;
+package com.qjay.test.tab;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.qjay.test.tab.PageFragment;
 
 /**
  * Created by Q.Jay on 2015/8/26 0026.

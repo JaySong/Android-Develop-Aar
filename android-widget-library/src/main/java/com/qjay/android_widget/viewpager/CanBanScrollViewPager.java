@@ -14,41 +14,33 @@ import com.qjay.android_widget.R;
  */
 public class CanBanScrollViewPager extends ViewPager {
     private boolean isCanScroll;//是否可以滑动
-
     public CanBanScrollViewPager(Context context) {
         super(context);
     }
-
     public CanBanScrollViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CanBanScrollViewPager);
         isCanScroll = a.getBoolean(R.styleable.CanBanScrollViewPager_isScroll, false);
         a.recycle();
     }
-
     public void setCanScroll(boolean isCanScroll) {
         this.isCanScroll = isCanScroll;
     }
-
     public boolean isCanScroll() {
         return isCanScroll;
     }
-
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         if (isCanScroll()) {
             return super.onTouchEvent(ev);
         }
         return false;
-
     }
-
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         if (isCanScroll()) {
             return super.onInterceptTouchEvent(ev);
         }
         return false;
-
     }
 }

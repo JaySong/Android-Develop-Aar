@@ -5,10 +5,10 @@
     tools:context=".MainActivity">
 
     <Button
-        android:onClick="jump"
+        android:onClick="designTabLayout"
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Design TabLayout"/>
+        android:text="designTabLayout实现应用Tab页切换"/>
 
 </RelativeLayout>

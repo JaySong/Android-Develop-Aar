@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.qjay.test.tab.DesignTabLayoutActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -16,9 +18,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void jump(View view) {
-        startActivity(new Intent(this,DesignTabLayoutActivity.class));
+    public void designTabLayout(View view) {
+        startActivity(new Intent(this, DesignTabLayoutActivity.class));
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
