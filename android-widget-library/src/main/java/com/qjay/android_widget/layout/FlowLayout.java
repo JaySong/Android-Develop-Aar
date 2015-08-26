@@ -1,27 +1,41 @@
-package com.qjay.android_widget;
+package com.qjay.android_widget.layout;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioGroup;
+
+import com.qjay.android_widget.R;
+
 
 /**
  * Created by JaySeng on 2015/8/15.
- * 流式布局的RadioGroup
+ * 流式布局
  */
-public class FlowRadioGroup extends RadioGroup {
+public class FlowLayout extends ViewGroup {
     private static final int DEFAULT_HORIZONTAL_SPACING = 5;
     private static final int DEFAULT_VERTICAL_SPACING = 5;
     private int mVerticalSpacing;
     private int mHorizontalSpacing;
-    public FlowRadioGroup(Context context) {
-        super(context);
+
+    public FlowLayout(Context context) {
+        this(context, null);
     }
 
-    public FlowRadioGroup(Context context, AttributeSet attrs) {
-        super(context, attrs);
+    public FlowLayout(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public FlowLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+        this(context, attrs, defStyleAttr, 0);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public FlowLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FlowLayout);
         try {
             this.mHorizontalSpacing = a.getDimensionPixelSize(R.styleable.FlowLayout_horizontal_spacing, DEFAULT_HORIZONTAL_SPACING);
@@ -60,7 +74,7 @@ public class FlowRadioGroup extends RadioGroup {
 
         for(int childCount = this.getChildCount(); wantedHeight < childCount; ++wantedHeight) {
             View childView = this.getChildAt(wantedHeight);
-            ViewGroup.LayoutParams childLayoutParams = childView.getLayoutParams();
+            LayoutParams childLayoutParams = childView.getLayoutParams();
             childView.measure(getChildMeasureSpec(widthMeasureSpec, paddingLeft + paddingRight, childLayoutParams.width), getChildMeasureSpec(heightMeasureSpec, paddingTop + paddingBottom, childLayoutParams.height));
             int childWidth = childView.getMeasuredWidth();
             int childHeight = childView.getMeasuredHeight();

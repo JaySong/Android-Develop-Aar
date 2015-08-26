@@ -1,4 +1,4 @@
-package com.qjay.android_widget;
+package com.qjay.android_widget.imageview;
 
 import android.annotation.TargetApi;
 import android.content.Context;

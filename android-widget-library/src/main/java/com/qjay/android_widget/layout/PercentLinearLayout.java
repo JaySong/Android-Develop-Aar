@@ -1,4 +1,4 @@
-package com.qjay.android_widget;
+package com.qjay.android_widget.layout;
 
 import android.content.Context;
 import android.util.AttributeSet;
