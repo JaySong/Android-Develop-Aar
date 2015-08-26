@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="CanBanScrollViewPager"><attr format="boolean" name="isScroll"/></declare-styleable>
     <declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/><attr format="boolean" name="border_overlay"/></declare-styleable>
     <declare-styleable name="ClearEditText"><attr format="reference" name="clear_icon"/></declare-styleable>
     <declare-styleable name="FlowLayout"><attr format="dimension" name="horizontal_spacing"/><attr format="dimension" name="vertical_spacing"/></declare-styleable>
