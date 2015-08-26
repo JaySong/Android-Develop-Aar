@@ -1,23 +1,26 @@
-package com.qjay.android_widget;
+package com.qjay.android_widget.textview;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
+
+import com.qjay.android_widget.R;
 
 /**
  * Created by JaySeng on 2015/8/15.
- * 带清除按钮的EditText，这里 extends AppCompatEditText 而不 extends EditText，
- * 主要是确保在所有系统中都有5.x的效果
+ * 带清除按钮的EditText
  */
-public class ClearAppCompatEditText extends AppCompatEditText implements View.OnTouchListener, View.OnFocusChangeListener, TextWatcher {
+public class ClearEditText extends EditText implements View.OnTouchListener, View.OnFocusChangeListener, TextWatcher {
     /**
      * 清除按钮图标
      */
@@ -25,29 +28,32 @@ public class ClearAppCompatEditText extends AppCompatEditText implements View.On
     private OnFocusChangeListener mOnFocusChangeListener;
     private OnTouchListener mOnTouchListener;
 
-    public ClearAppCompatEditText(Context context) {
+    public ClearEditText(Context context) {
         super(context);
         init(context);
     }
 
-    public ClearAppCompatEditText(Context context, AttributeSet attrs) {
+    public ClearEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ClearEditText);
-        mClearTextIcon = a.getDrawable(R.styleable.ClearEditText_clear_icon);
-        a.recycle();
-
         init(context);
     }
 
-    public ClearAppCompatEditText(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ClearEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ClearEditText);
+        mClearTextIcon = a.getDrawable(R.styleable.ClearEditText_clear_icon);
+        a.recycle();
+        init(context);
+    }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public ClearEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
         init(context);
     }
 
     private void init(Context context) {
-        if(mClearTextIcon == null){
+        if (mClearTextIcon == null) {
             final Drawable drawable = ContextCompat.getDrawable(context, R.drawable.abc_ic_clear_mtrl_alpha);
             final Drawable wrappedDrawable = DrawableCompat.wrap(drawable); //Wrap the drawable so that it can be tinted pre Lollipop
             DrawableCompat.setTint(wrappedDrawable, getCurrentHintTextColor());

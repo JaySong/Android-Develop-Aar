@@ -1,12 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
     buildToolsVersion '23.0.0'
 
     defaultConfig {
-        applicationId "com.qjay.test"
-        minSdkVersion 11
+        minSdkVersion 9
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -26,8 +25,4 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile project(':android-utils-library')
-    compile project(':android-widget-library')
-    compile 'com.android.support:design:23.0.0'
-    compile 'com.android.support:appcompat-v7:23.0.0'
 }
