@@ -18,4 +18,21 @@
         <attr name="border_color" format="color" />
         <attr name="border_overlay" format="boolean" />
     </declare-styleable>
+    <!--&lt;!&ndash;SuperRecyclerView&ndash;&gt;-->
+    <!--<declare-styleable name="SuperRecyclerView">-->
+        <!--&lt;!&ndash;布局管理器类型&ndash;&gt;-->
+        <!--<attr name="layout_manager" format="flag">-->
+            <!--&lt;!&ndash;线性方式&ndash;&gt;-->
+            <!--<flag name="linear_layout_manager" value="0" />-->
+            <!--&lt;!&ndash;风格方式&ndash;&gt;-->
+            <!--<flag name="grid_layout_manager" value="1" />-->
+            <!--&lt;!&ndash;&ndash;&gt;-->
+            <!--<flag name="staggered_grid_layout_manager" value="3" />-->
+        <!--</attr>-->
+    <!--</declare-styleable>-->
+
+    <!--CanBanScrollViewPager-->
+    <declare-styleable name="CanBanScrollViewPager">
+        <attr name="isScroll" format="boolean" />
+    </declare-styleable>
 </resources>

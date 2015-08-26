@@ -16,10 +16,10 @@ import com.qjay.android_widget.R;
  * 流式布局
  */
 public class FlowLayout extends ViewGroup {
-    private static final int DEFAULT_HORIZONTAL_SPACING = 5;
-    private static final int DEFAULT_VERTICAL_SPACING = 5;
-    private int mVerticalSpacing;
-    private int mHorizontalSpacing;
+    private static final int DEFAULT_HORIZONTAL_SPACING = 5;//默认水平方向子View之间的间隔
+    private static final int DEFAULT_VERTICAL_SPACING = 5;//默认垂直方向子View之间的间隔
+    private int mVerticalSpacing;//xml布局中设置的垂直方向子View的间隔
+    private int mHorizontalSpacing;//xml布局中设置的水平方向子View的间隔
 
     public FlowLayout(Context context) {
         this(context, null);
@@ -61,6 +61,7 @@ public class FlowLayout extends ViewGroup {
         this.mVerticalSpacing = pixelSize;
     }
 
+    @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int myWidth = resolveSize(0, widthMeasureSpec);
         int paddingLeft = this.getPaddingLeft();
@@ -91,7 +92,7 @@ public class FlowLayout extends ViewGroup {
         wantedHeight = childTop + lineHeight + paddingBottom;
         this.setMeasuredDimension(myWidth, resolveSize(wantedHeight, heightMeasureSpec));
     }
-
+    @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         int myWidth = r - l;
         int paddingLeft = this.getPaddingLeft();

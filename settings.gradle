@@ -1,1 +1,1 @@
-include ':app', ':android-utils-library', ':android-widget-library'
+include ':app', ':android-utils-library', ':android-widget-library', ':android-http-library'
