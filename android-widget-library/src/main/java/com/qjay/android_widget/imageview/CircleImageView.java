@@ -1,4 +1,4 @@
-package com.qjay.android_widget;
+package com.qjay.android_widget.imageview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -19,6 +19,8 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+
+import com.qjay.android_widget.R;
 
 /**
  * Created by JaySeng on 2015/8/15.
