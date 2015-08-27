@@ -5,4 +5,6 @@ package com.qjay.http;
  */
 public class OkHttpHelper {
 
+    public void s(){
+    }
 }
