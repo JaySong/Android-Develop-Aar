@@ -7,7 +7,7 @@ import android.util.TypedValue;
  * Created by 仇杰 on 2015/4/27.
  * Description:常用单位转换的辅助类
  */
-public abstract class DimenUtil {
+public final class DimenUtil {
 
     private DimenUtil() {
         /** cannot be instantiated [不能被实例化]*/

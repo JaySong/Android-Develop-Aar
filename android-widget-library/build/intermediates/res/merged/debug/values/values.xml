@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/D:/weiyun/android_project/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/develop_dir/testspace/studio/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -172,10 +172,10 @@
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
-    <!-- From: file:/D:/weiyun/android_project/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/develop_dir/testspace/studio/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
-    <!-- From: file:/D:/weiyun/android_project/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/develop_dir/testspace/studio/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
@@ -186,10 +186,10 @@
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
     <item name="home" type="id"/>
-    <!-- From: file:/D:/weiyun/android_project/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/develop_dir/testspace/studio/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
-    <!-- From: file:/D:/weiyun/android_project/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/develop_dir/testspace/studio/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
@@ -217,10 +217,10 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/D:/weiyun/android_project/Android-Develop-Aar/android-widget-library/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/develop_dir/testspace/studio/Android-Develop-Aar/android-widget-library/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">Android-Widget-Library</string>
-    <!-- From: file:/D:/weiyun/android_project/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/develop_dir/testspace/studio/Android-Develop-Aar/android-widget-library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

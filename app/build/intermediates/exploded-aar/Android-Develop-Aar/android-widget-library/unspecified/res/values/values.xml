@@ -4,7 +4,7 @@
     <declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/><attr format="boolean" name="border_overlay"/></declare-styleable>
     <declare-styleable name="ClearEditText"><attr format="reference" name="clear_icon"/></declare-styleable>
     <declare-styleable name="FlowLayout"><attr format="dimension" name="horizontal_spacing"/><attr format="dimension" name="vertical_spacing"/></declare-styleable>
-    <!-- From: file:/D:/weiyun/android_project/Android-Develop-Aar/android-widget-library/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/develop_dir/testspace/studio/Android-Develop-Aar/android-widget-library/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">Android-Widget-Library</string>
 </resources>

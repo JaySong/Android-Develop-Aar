@@ -21,4 +21,6 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/okhttp-2.5.0.jar')
+    compile files('libs/okio-1.6.0.jar')
+    compile project(':android-utils-library')
 }
