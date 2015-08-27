@@ -30,7 +30,7 @@ public class DesignTabLayoutActivity extends FragmentActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(pagerAdapter);
         tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
-//        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
 //        tabLayout.getTabAt(0).setText("fdsfdsf");
 //        tabLayout.setAlpha(0);
@@ -38,6 +38,7 @@ public class DesignTabLayoutActivity extends FragmentActivity {
         tabLayout.addTab(buildTab(tabLayout));
         tabLayout.addTab(buildTab(tabLayout));
         tabLayout.setTabTextColors(Color.RED, Color.BLUE);
+
 
         tabLayout.setSelectedTabIndicatorColor(new ColorDrawable().getColor());
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -53,6 +54,22 @@ public class DesignTabLayoutActivity extends FragmentActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
+            }
+        });
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
     }
