@@ -10,3 +10,13 @@
 /android-widget-library/src/test
 /android-utils-library/src/androidTest
 /android-utils-library/src/test
+/Android-Develop-Aar.iml
+/gradle.properties
+/gradlew
+/gradlew.bat
+/gradle
+/.idea
+/android-http-library/android-http-library.iml
+/android-utils-library/android-utils-library.iml
+/android-widget-library/android-widget-library.iml
+/app/app.iml
