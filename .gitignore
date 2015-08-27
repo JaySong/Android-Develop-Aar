@@ -5,3 +5,8 @@
 .DS_Store
 /build
 /captures
+/android-http-library/build
+/android-widget-library/src/androidTest
+/android-widget-library/src/test
+/android-utils-library/src/androidTest
+/android-utils-library/src/test
