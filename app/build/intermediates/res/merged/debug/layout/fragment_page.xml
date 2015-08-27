@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" /><!-- From: file:/D:/weiyun/android_project/Android-Develop-Aar/app/src/main/res/layout/fragment_page.xml -->
