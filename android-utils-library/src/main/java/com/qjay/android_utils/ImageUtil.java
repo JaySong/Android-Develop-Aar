@@ -14,6 +14,10 @@ import java.lang.reflect.Field;
  * Created by JaySeng on 2015/8/27.
  */
 public final class ImageUtil {
+    private ImageUtil() {
+        /** cannot be instantiated [不能被实例化]*/
+        throw new UnsupportedOperationException("不支持实例化");
+    }
     /**
      * 根据InputStream获取图片实际的宽度和高度
      *
