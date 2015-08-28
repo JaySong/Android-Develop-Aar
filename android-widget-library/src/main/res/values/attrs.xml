@@ -18,6 +18,11 @@
         <attr name="border_color" format="color" />
         <attr name="border_overlay" format="boolean" />
     </declare-styleable>
+    <!--选择器ImageView-->
+    <declare-styleable name="SelectorImageView">
+        <attr name="selector_src" format="reference"/>
+        <attr name="checked" format="boolean"/>
+    </declare-styleable>
     <!--&lt;!&ndash;SuperRecyclerView&ndash;&gt;-->
     <!--<declare-styleable name="SuperRecyclerView">-->
         <!--&lt;!&ndash;布局管理器类型&ndash;&gt;-->
@@ -31,7 +36,6 @@
         <!--</attr>-->
     <!--</declare-styleable>-->
 
-    <!--CanBanScrollViewPager-->
     <declare-styleable name="CanBanScrollViewPager">
         <attr name="isScroll" format="boolean" />
     </declare-styleable>
