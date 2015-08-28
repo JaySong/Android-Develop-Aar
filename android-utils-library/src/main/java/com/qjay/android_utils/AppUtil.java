@@ -10,7 +10,7 @@ import android.util.Log;
 import java.util.List;
 
 /**
- * 应用工具类
+ * 应用工具类,用于获取应用信息
  * Created by JaySeng on 2015/8/23.
  */
 public final class AppUtil {

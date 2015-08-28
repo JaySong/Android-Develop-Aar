@@ -20,3 +20,6 @@
 /android-utils-library/android-utils-library.iml
 /android-widget-library/android-widget-library.iml
 /app/app.iml
+/app/build
+/android-widget-library/build
+/android-utils-library/build

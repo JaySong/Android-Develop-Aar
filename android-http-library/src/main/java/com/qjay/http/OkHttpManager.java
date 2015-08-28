@@ -130,7 +130,7 @@ public class OkHttpManager {
      * @param callback
      * @param params
      */
-    private void _postAsyn(String url, final StringCallback callback, Params... params) {
+    private void _postAsyn(String url, final StringCallback callback, Params... params) throws IOException{
         Request request = buildPostRequest(url, params);
         deliveryResult(callback, request);
     }
@@ -142,11 +142,12 @@ public class OkHttpManager {
      * @param callback
      * @param params
      */
-    private void _postAsyn(String url, final StringCallback callback, Map<String, String> params) {
+    private void _postAsyn(String url, final StringCallback callback, Map<String, String> params)  throws IOException{
         Params[] paramsArr = map2Params(params);
         Request request = buildPostRequest(url, paramsArr);
         deliveryResult(callback, request);
     }
+
 
     /**
      * 同步基于post的文件上传
@@ -176,7 +177,6 @@ public class OkHttpManager {
 
     /**
      * 异步基于post的文件上传
-     *
      * @param url
      * @param callback
      * @param files
@@ -185,6 +185,37 @@ public class OkHttpManager {
      */
     private void _postAsyn(String url, StringCallback callback, File[] files, String[] fileKeys, Params... params) throws IOException {
         Request request = buildMultipartFormRequest(url, files, fileKeys, params);
+        deliveryResult(callback, request);
+    }
+
+    /**
+     * 异步基于post的文件上传，带参数上传
+     *
+     * @param url 请求url
+     * @param callback
+     * @param files
+     * @param params
+     */
+    private void _postAsyn(String url, final StringCallback callback,Map<String,File> files, Map<String, String> params)  throws IOException{
+        File[] file = null;
+        String[] fileKey = null;
+
+        if (files == null) {
+            file = new File[0];
+            fileKey = new String[0];
+        }else{
+            int size = files.size();
+            file = new File[size];
+            fileKey = new String[size];
+            Set<Map.Entry<String, File>> entries = files.entrySet();
+            int i = 0;
+            for (Map.Entry<String, File> entry : entries) {
+                fileKey[i] = entry.getKey();
+                file[i] = entry.getValue();
+                i++;
+            }
+        }
+        Request request = buildMultipartFormRequest(url, file, fileKey, map2Params(params));
         deliveryResult(callback, request);
     }
 
@@ -378,15 +409,6 @@ public class OkHttpManager {
         return getInstance()._postSynString(url, params);
     }
 
-    public static void postAsyn(String url, final StringCallback callback, Params... params) {
-        getInstance()._postAsyn(url, callback, params);
-    }
-
-
-    public static void postAsyn(String url, final StringCallback callback, Map<String, String> params) {
-        getInstance()._postAsyn(url, callback, params);
-    }
-
 
     public static Response post(String url, File[] files, String[] fileKeys, Params... params) throws IOException {
         return getInstance()._post(url, files, fileKeys, params);
@@ -399,26 +421,28 @@ public class OkHttpManager {
     public static Response post(String url, File file, String fileKey, Params... params) throws IOException {
         return getInstance()._post(url, file, fileKey, params);
     }
+    public static void postAsyn(String url, final StringCallback callback, Params... params) throws IOException{
+        getInstance()._postAsyn(url, callback, params);
+    }
 
+    public static void postAsyn(String url, final StringCallback callback, Map<String, String> params) throws IOException{
+        getInstance()._postAsyn(url, callback, params);
+    }
     public static void postAsyn(String url, StringCallback callback, File[] files, String[] fileKeys, Params... params) throws IOException {
         getInstance()._postAsyn(url, callback, files, fileKeys, params);
     }
-
-
+    public static void postAsyn(String url, StringCallback callback, Map<String,File> files, Map<String, String> params) throws IOException {
+        getInstance()._postAsyn(url, callback, files,params);
+    }
     public static void postAsyn(String url, StringCallback callback, File file, String fileKey) throws IOException {
         getInstance()._postAsyn(url, callback, file, fileKey);
     }
-
-
     public static void postAsyn(String url, StringCallback callback, File file, String fileKey, Params... params) throws IOException {
         getInstance()._postAsyn(url, callback, file, fileKey, params);
     }
-
     public static void displayImage(final ImageView view, String url, int errorResId) throws IOException {
         getInstance()._displayImage(view, url, errorResId);
     }
-
-
     public static void displayImage(final ImageView view, String url) {
         getInstance()._displayImage(view, url, -1);
     }
