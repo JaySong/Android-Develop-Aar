@@ -1,5 +1,7 @@
 package com.qjay.android_utils;
 
+import android.app.ActivityManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -75,5 +77,22 @@ public final class AppUtil {
         List<ApplicationInfo> installedApplications =
                 packageManager.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
         return installedApplications;
+    }
+
+    /**
+     * 判断是否在后台运行
+     * @param context 上下文
+     * @return 返回结果
+     */
+    public static boolean isApplicationInBackground(Context context) {
+        ActivityManager am = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> taskList = am.getRunningTasks(1);
+        if (taskList != null && !taskList.isEmpty()) {
+            ComponentName topActivity = taskList.get(0).topActivity;
+            if (topActivity != null && !topActivity.getPackageName().equals(context.getPackageName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
