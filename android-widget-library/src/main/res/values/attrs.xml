@@ -36,10 +36,11 @@
         <!--</attr>-->
     <!--</declare-styleable>-->
 
+<!--可禁止滑动的ViewPager-->
     <declare-styleable name="CanBanScrollViewPager">
         <attr name="isScroll" format="boolean" />
     </declare-styleable>
-
+<!--BGA badge view-->
     <declare-styleable name="BGABadgeView">
         <!-- 徽章背景色 -->
         <attr name="badge_bgColor" format="reference|color" />
@@ -61,6 +62,12 @@
         </attr>
         <!-- 是否可以拖拽删除徽章 -->
         <attr name="badge_dragable" format="boolean" />
+    </declare-styleable>
+
+    <!--BGA Refresh-->
+    <declare-styleable name="BGAMoocStyleRefreshView">
+        <attr name="mv_ultimateColor" format="reference|color"/>
+        <attr name="mv_originalImg" format="reference" />
     </declare-styleable>
 
 </resources>

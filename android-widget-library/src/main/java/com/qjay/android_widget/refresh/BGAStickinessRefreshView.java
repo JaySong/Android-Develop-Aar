@@ -30,6 +30,7 @@ import android.view.View;
 
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+import com.qjay.android_widget.R;
 
 /**
  * 作者:王浩 邮件:bingoogolapple@gmail.com

@@ -22,6 +22,8 @@ import android.graphics.Color;
 import android.support.v4.view.ViewCompat;
 import android.view.View;
 
+import com.qjay.android_widget.R;
+
 /**
  * 作者:王浩 邮件:bingoogolapple@gmail.com
  * 创建时间:15/5/21 13:16
