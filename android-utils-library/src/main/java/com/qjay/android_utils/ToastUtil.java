@@ -1,5 +1,6 @@
 package com.qjay.android_utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.Gravity;
 import android.widget.Toast;
@@ -9,8 +10,6 @@ import android.widget.Toast;
  * Created by Q.Jay on 2015/8/28 0028.
  */
 public final class ToastUtil {
-
-    private static int DEFAULT_GRAVITY;
 
     private static Toast mToast;
 
@@ -54,7 +53,7 @@ public final class ToastUtil {
     }
 
     public static void show(Context context, CharSequence text) {
-        show(context, text, DEFAULT_GRAVITY);
+        show(context, text, 0);
     }
 
     public static void show(Context context, CharSequence text, int gravity) {
@@ -63,15 +62,24 @@ public final class ToastUtil {
 
     public static void show(Context context, CharSequence text, int gravity, int xOffset, int yOffset) {
         instance(context);
+        if(gravity == 0) {
+            gravity = mToast.getGravity();
+        }
+        if(xOffset == 0) {
+            xOffset = mToast.getXOffset();
+        }
+        if(yOffset == 0) {
+            yOffset = mToast.getYOffset();
+        }
         mToast.setGravity(gravity, xOffset, yOffset);
         mToast.setText(text);
         mToast.show();
     }
 
+    @SuppressLint("ShowToast")
     private static Toast instance(Context context) {
         cancel();
         mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
-        DEFAULT_GRAVITY = mToast.getGravity();
         return mToast;
     }
 

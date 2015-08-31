@@ -14,8 +14,8 @@ public class DrawableSelector {
 
     private static final String TAG = "DrawableSelector";
 
-    private static final List<Drawable> drawableArray = new ArrayList<>();
-    private static final List<Integer> drawableStateArray = new ArrayList<>();
+    private final List<Drawable> drawableArray = new ArrayList<>();
+    private final List<Integer> drawableStateArray = new ArrayList<>();
 
     private DrawableSelector() {
     }

@@ -23,18 +23,18 @@
         <attr name="selector_src" format="reference"/>
         <attr name="checked" format="boolean"/>
     </declare-styleable>
-    <!--&lt;!&ndash;SuperRecyclerView&ndash;&gt;-->
-    <!--<declare-styleable name="SuperRecyclerView">-->
-        <!--&lt;!&ndash;布局管理器类型&ndash;&gt;-->
-        <!--<attr name="layout_manager" format="flag">-->
-            <!--&lt;!&ndash;线性方式&ndash;&gt;-->
-            <!--<flag name="linear_layout_manager" value="0" />-->
-            <!--&lt;!&ndash;风格方式&ndash;&gt;-->
-            <!--<flag name="grid_layout_manager" value="1" />-->
-            <!--&lt;!&ndash;&ndash;&gt;-->
-            <!--<flag name="staggered_grid_layout_manager" value="3" />-->
-        <!--</attr>-->
-    <!--</declare-styleable>-->
+    <!--SuperRecyclerView-->
+    <declare-styleable name="SuperRecyclerView">
+        <!--布局管理器类型-->
+        <attr name="layout_manager">
+            <!--线性方式-->
+            <enum name="linear_layout_manager" value="0" />
+            <!--风格方式-->
+            <enum name="grid_layout_manager" value="1" />
+            <!---->
+            <enum name="staggered_grid_layout_manager" value="2" />
+        </attr>
+    </declare-styleable>
 
 <!--可禁止滑动的ViewPager-->
     <declare-styleable name="CanBanScrollViewPager">

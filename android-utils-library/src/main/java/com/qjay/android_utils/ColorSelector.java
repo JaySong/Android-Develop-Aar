@@ -12,8 +12,8 @@ import java.util.List;
 public class ColorSelector {
     private static final String TAG = "ColorSelector";
 
-    private static final List<Integer> colorArray = new ArrayList<>();
-    private static final List<Integer> colorStateArray = new ArrayList<>();
+    private final List<Integer> colorArray = new ArrayList<>();
+    private final List<Integer> colorStateArray = new ArrayList<>();
 
     private ColorSelector() {
     }
