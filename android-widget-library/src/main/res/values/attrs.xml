@@ -20,8 +20,8 @@
     </declare-styleable>
     <!--选择器ImageView-->
     <declare-styleable name="SelectorImageView">
-        <attr name="selector_src" format="reference"/>
-        <attr name="checked" format="boolean"/>
+        <attr name="selector_src" format="reference" />
+        <attr name="checked" format="boolean" />
     </declare-styleable>
     <!--SuperRecyclerView-->
     <declare-styleable name="SuperRecyclerView">
@@ -34,13 +34,28 @@
             <!---->
             <enum name="staggered_grid_layout_manager" value="2" />
         </attr>
+        <attr name="orientation" >
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr name="dividerColor" format="color" />
+        <attr name="dividerSpace" format="dimension" />
+        <attr name="isAutoHeight" format="boolean" /><!--是否自适配高度-->
+        <attr name="dividerMargin" format="dimension" />
+        <attr name="dividerMarginLeft" format="dimension" />
+        <attr name="dividerMarginRight" format="dimension" />
+        <attr name="dividerMarginTop" format="dimension" />
+        <attr name="dividerMarginBottom" format="dimension" />
+
+        <attr name="span_count" format="integer" />
+
     </declare-styleable>
 
-<!--可禁止滑动的ViewPager-->
+    <!--可禁止滑动的ViewPager-->
     <declare-styleable name="CanBanScrollViewPager">
         <attr name="isScroll" format="boolean" />
     </declare-styleable>
-<!--BGA badge view-->
+    <!--BGA badge view-->
     <declare-styleable name="BGABadgeView">
         <!-- 徽章背景色 -->
         <attr name="badge_bgColor" format="reference|color" />
@@ -66,8 +81,19 @@
 
     <!--BGA Refresh-->
     <declare-styleable name="BGAMoocStyleRefreshView">
-        <attr name="mv_ultimateColor" format="reference|color"/>
+        <attr name="mv_ultimateColor" format="reference|color" />
         <attr name="mv_originalImg" format="reference" />
+    </declare-styleable>
+
+    <!--自定义的textview-->
+    <declare-styleable name="StrokeTextView">
+        <attr name="strokeColor" format="color" /><!--描边的颜色-->
+        <attr name="strokeWidth" format="dimension" /><!--四周边框粗细-->
+        <attr name="strokeLeftWidth" format="dimension"/><!--左边框的粗细-->
+        <attr name="strokeTopWidth" format="dimension"/><!--上边框的粗细-->
+        <attr name="strokeRightWidth" format="dimension"/><!--右边框的粗细-->
+        <attr name="strokeBottomWidth" format="dimension"/><!--下边框的粗细-->
+        <attr name="radius" format="dimension"/><!--圆角半径-->
     </declare-styleable>
 
 </resources>
