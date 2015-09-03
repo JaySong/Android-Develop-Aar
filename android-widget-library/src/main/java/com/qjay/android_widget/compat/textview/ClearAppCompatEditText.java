@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.qjay.android_widget.R;
 
+
 /**
  * Created by JaySeng on 2015/8/15.
  * 带清除按钮的EditText，这里 extends AppCompatEditText 而不 extends EditText，
@@ -24,8 +25,8 @@ public class ClearAppCompatEditText extends AppCompatEditText implements View.On
      * 清除按钮图标
      */
     private Drawable mClearTextIcon;
-    private OnFocusChangeListener mOnFocusChangeListener;
-    private OnTouchListener mOnTouchListener;
+    private View.OnFocusChangeListener mOnFocusChangeListener;
+    private View.OnTouchListener mOnTouchListener;
 
     public ClearAppCompatEditText(Context context) {
         super(context);

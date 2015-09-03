@@ -73,4 +73,17 @@ public final class MatcherUtil {
         return regexMatcher(regex, idCardNo);
     }
 
+    /**
+     * 检测密码格式
+     */
+    public static boolean checkPassword(String password) {
+        int length = password.length();
+        if (length < 6 || length > 20) {
+            return false;
+        }
+        return  true;
+       /* String regex = "^[a-zA-Z0-9\\_\\-]+$";
+        return regexMatcher(regex, password);*/
+    }
+
 }

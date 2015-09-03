@@ -30,6 +30,13 @@ public class ColorSelector {
         colorStateArray.add(android.R.attr.state_selected);
         return this;
     }
+    public ColorSelector setFocus(int norColor, int selectColor) {
+        colorArray.add(norColor);
+        colorArray.add(selectColor);
+        colorStateArray.add(-android.R.attr.state_focused);
+        colorStateArray.add(android.R.attr.state_focused);
+        return this;
+    }
 
     public ColorStateList build(){
         int[] colors = new int[colorArray.size()];
