@@ -45,6 +45,20 @@ public class OkHttpManager {
     }
 
     /**
+     * 取消网络请求
+     */
+    public static void cancelRequest() {
+        getInstance().cancel();
+    }
+
+    /**
+     * 取消网络请求
+     */
+    private void cancel() {
+        mOkHttpClient.cancel(-1);
+    }
+
+    /**
      * @return 返回当前类实例对象
      */
     public static OkHttpManager getInstance() {
@@ -93,7 +107,7 @@ public class OkHttpManager {
      */
     private void _getAsyn(String url, final StringCallback callback) {
         final Request request = new Request.Builder()
-                .url(url)
+                .url(url).tag(-1)
                 .build();
         deliveryResult(callback, request);
     }
@@ -561,7 +575,7 @@ public class OkHttpManager {
         }
         RequestBody requestBody = builder.build();
         return new Request.Builder()
-                .url(url)
+                .url(url).tag(-1)
                 .post(requestBody)
                 .build();
     }
