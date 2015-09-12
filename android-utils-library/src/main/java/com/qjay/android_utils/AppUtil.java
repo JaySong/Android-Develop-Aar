@@ -95,4 +95,25 @@ public final class AppUtil {
         }
         return false;
     }
+
+    /**
+     * 像素转换成屏幕密度
+     * @param context 上下文
+     * @param pxValue 像素 float 类型
+     * @return 返回密度 int类型
+     */
+    public static int px2dip(Context context, float pxValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (pxValue / scale + 0.5f);
+    }
+    /**
+     * 屏幕密度转换成像素;
+     * @param context 上下文
+     * @param dipValue 密度 float 类型
+     * @return 返回像素  int类型
+     */
+    public static int dip2px(Context context, float dipValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dipValue * scale + 0.5f);
+    }
 }

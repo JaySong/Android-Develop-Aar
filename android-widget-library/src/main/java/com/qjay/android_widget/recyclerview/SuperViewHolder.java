@@ -4,6 +4,7 @@ import android.support.annotation.IdRes;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * Created by Q.Jay on 2015/9/1 0001.
@@ -24,5 +25,11 @@ public class SuperViewHolder extends RecyclerView.ViewHolder{
             mViews.put(viewId, view);
         }
         return (V)view;
+    }
+
+    public SuperViewHolder setText(@IdRes int viewId,String text) {
+        TextView view = getView(viewId);
+        view.setText(text);
+        return this;
     }
 }

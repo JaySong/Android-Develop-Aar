@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <cn.bingoogolapple.refreshlayout.BGAMoocStyleRefreshView
+    <com.qjay.android_widget.refresh.BGAMoocStyleRefreshView
         android:id="@+id/moocView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

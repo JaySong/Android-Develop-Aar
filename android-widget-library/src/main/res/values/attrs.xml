@@ -87,13 +87,18 @@
 
     <!--自定义的textview-->
     <declare-styleable name="StrokeTextView">
-        <attr name="strokeColor" format="color" /><!--描边的颜色-->
-        <attr name="strokeWidth" format="dimension" /><!--四周边框粗细-->
+        <attr name="stroke_color" format="color" /><!--描边的颜色-->
+        <attr name="isStrokeDrawable" format="boolean" /><!--是否drawable范围内也搭边-->
+        <attr name="isStrokeDrawableLeft" format="boolean" /><!--是否drawableLeft范围内也搭边-->
+        <attr name="isStrokeDrawableTop" format="boolean" /><!--是否drawableTop范围内也搭边-->
+        <attr name="isStrokeDrawableRight" format="boolean" /><!--是否drawableRight范围内也搭边-->
+        <attr name="isStrokeDrawableBottom" format="boolean" /><!--是否drawableBottom范围内也搭边-->
+        <attr name="stroke_width" format="dimension" /><!--四周边框粗细-->
         <attr name="strokeLeftWidth" format="dimension"/><!--左边框的粗细-->
         <attr name="strokeTopWidth" format="dimension"/><!--上边框的粗细-->
         <attr name="strokeRightWidth" format="dimension"/><!--右边框的粗细-->
         <attr name="strokeBottomWidth" format="dimension"/><!--下边框的粗细-->
-        <attr name="radius" format="dimension"/><!--圆角半径-->
+        <attr name="corner_radius" format="dimension"/><!--圆角半径-->
     </declare-styleable>
 
 </resources>

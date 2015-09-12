@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -61,7 +62,7 @@ public final class ToastUtil {
         show(context, text, 0);
     }
     public static void debugShow(Context context,CharSequence text){
-        Toast.makeText(context,text,Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,"测试阶段才会显示的内容\\n"+text,Toast.LENGTH_SHORT).show();
     }
     public static void show(Context context, CharSequence text, int gravity) {
         show(context, text, gravity, 0, 0);
@@ -83,6 +84,8 @@ public final class ToastUtil {
         }
         mToast.setGravity(gravity, xOffset, yOffset);
         mToast.setText(text);
+        mToastIco.setImageDrawable(null);
+        mToastIco.setVisibility(View.GONE);
         mToast.show();
     }
 
@@ -149,6 +152,7 @@ public final class ToastUtil {
         mToast.setGravity(gravity, xOffset, yOffset);
         mToast.setText(text);
         mToastIco.setImageDrawable(drawable);
+        mToastIco.setVisibility(View.VISIBLE);
         mToast.show();
     }
 

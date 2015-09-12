@@ -13,8 +13,8 @@ import java.util.List;
  */
 public abstract class SuperRecyclerViewAdapter<T> extends RecyclerView.Adapter<SuperViewHolder> implements View.OnClickListener {
 
-    protected final List<T> items;
-    protected final int layout;
+    protected  List<T> items;
+    protected  int layout;
     protected OnItemClickListener mOnItemClickListener;
 
     public SuperRecyclerViewAdapter(List<T> items, @LayoutRes int layout) {
@@ -62,4 +62,14 @@ public abstract class SuperRecyclerViewAdapter<T> extends RecyclerView.Adapter<S
             mOnItemClickListener.onItemClick(this, v, position);
         }
     }
+
+    public void setData(List<T> t) {
+        items = t;
+        notifyDataSetChanged();
+    }
+
+    public List<T> getData() {
+        return items;
+    }
+
 }

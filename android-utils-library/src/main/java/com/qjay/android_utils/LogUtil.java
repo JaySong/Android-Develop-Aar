@@ -11,7 +11,8 @@ import java.util.Date;
  */
 public class LogUtil {
 
-    private static boolean DEBUG = BuildConfig.DEBUG;
+//    private static boolean DEBUG = BuildConfig.DEBUG;
+    private static boolean DEBUG = true;
 
     private LogUtil() {
         throw new UnsupportedOperationException("cannot be instantiated");

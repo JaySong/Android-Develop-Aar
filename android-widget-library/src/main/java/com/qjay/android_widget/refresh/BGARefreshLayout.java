@@ -181,6 +181,11 @@ public class BGARefreshLayout extends LinearLayout {
         initLoadMoreFooterView();
     }
 
+    public void setIsLoadingMoreEnabled(){
+        mRefreshViewHolder.setIsLoadingMoreEnabled();
+        initLoadMoreFooterView();
+    }
+
     public void startChangeWholeHeaderViewPaddingTop(int distance) {
         ValueAnimator animator = ValueAnimator.ofInt(mWholeHeaderView.getPaddingTop(), mWholeHeaderView.getPaddingTop() - distance);
         animator.setDuration(mRefreshViewHolder.getTopAnimDuration());
@@ -214,6 +219,21 @@ public class BGARefreshLayout extends LinearLayout {
     }
 
     /**
+     * 初始化上拉加载更多控件
+     *
+     * @return
+     */
+    private void initLoadMoreFooterView() {
+        mLoadMoreFooterView = mRefreshViewHolder.getLoadMoreFooterView();
+        if (mLoadMoreFooterView != null) {
+            // 测量上拉加载更多控件的高度
+            mLoadMoreFooterView.measure(0, 0);
+            mLoadMoreFooterViewHeight = mLoadMoreFooterView.getMeasuredHeight();
+            mLoadMoreFooterView.setVisibility(GONE);
+        }
+    }
+
+    /**
      * 设置下拉刷新控件下方的自定义控件
      *
      * @param customHeaderView 下拉刷新控件下方的自定义控件
@@ -229,21 +249,6 @@ public class BGARefreshLayout extends LinearLayout {
             mCustomHeaderView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             mWholeHeaderView.addView(mCustomHeaderView);
             mIsCustomHeaderViewScrollable = scrollable;
-        }
-    }
-
-    /**
-     * 初始化上拉加载更多控件
-     *
-     * @return
-     */
-    private void initLoadMoreFooterView() {
-        mLoadMoreFooterView = mRefreshViewHolder.getLoadMoreFooterView();
-        if (mLoadMoreFooterView != null) {
-            // 测量上拉加载更多控件的高度
-            mLoadMoreFooterView.measure(0, 0);
-            mLoadMoreFooterViewHeight = mLoadMoreFooterView.getMeasuredHeight();
-            mLoadMoreFooterView.setVisibility(GONE);
         }
     }
 

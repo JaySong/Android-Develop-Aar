@@ -25,6 +25,7 @@ import java.net.FileNameMap;
 import java.net.URLConnection;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * okhttp请求网络管理类 使用单例设计模式
@@ -42,6 +43,8 @@ public class OkHttpManager {
     private OkHttpManager() {
         mOkHttpClient = new OkHttpClient();
         mDelivery = new android.os.Handler(Looper.getMainLooper());
+        mOkHttpClient.setConnectTimeout(30, TimeUnit.SECONDS);
+        mOkHttpClient.setReadTimeout(60, TimeUnit.SECONDS);
     }
 
     /**
@@ -571,7 +574,7 @@ public class OkHttpManager {
         }
         FormEncodingBuilder builder = new FormEncodingBuilder();
         for (Params param : params) {
-            builder.add(param.key, param.value);
+            builder.add(param.key, param.value == null?"":param.value);
         }
         RequestBody requestBody = builder.build();
         return new Request.Builder()

@@ -113,6 +113,9 @@ public abstract class BGARefreshViewHolder {
         mIsLoadingMoreEnabled = isLoadingMoreEnabled;
     }
 
+    public void setIsLoadingMoreEnabled(){
+        mIsLoadingMoreEnabled = true;
+    }
     /**
      * 设置正在加载更多时的文本
      *

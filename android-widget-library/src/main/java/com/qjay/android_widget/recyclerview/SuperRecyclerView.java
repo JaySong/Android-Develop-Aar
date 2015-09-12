@@ -129,6 +129,4 @@ public class SuperRecyclerView extends BaseRecyclerView {
         }
         return divider.build();
     }
-
-
 }
