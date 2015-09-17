@@ -1,5 +1,6 @@
 package com.qjay.android_widget.recyclerview;
 
+import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,10 +17,16 @@ public abstract class SuperRecyclerViewAdapter<T> extends RecyclerView.Adapter<S
     protected  List<T> items;
     protected  int layout;
     protected OnItemClickListener mOnItemClickListener;
+    protected  Context context;
 
     public SuperRecyclerViewAdapter(List<T> items, @LayoutRes int layout) {
         this.items = items;
         this.layout = layout;
+    }
+    public SuperRecyclerViewAdapter(Context context,List<T> items, @LayoutRes int layout) {
+        this.items = items;
+        this.layout = layout;
+        this.context = context;
     }
 
     @Override

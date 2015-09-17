@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -19,9 +20,36 @@ public final class ToastUtil {
     private static LinearLayout mToastView;
     private static ImageView mToastIco;
 
+    private static int bgResID = -1;
+    private static int bgColorID = -1;
+
     private ToastUtil() {
         /** cannot be instantiated [不能被实例化]*/
         throw new UnsupportedOperationException("不支持实例化");
+    }
+
+    /**
+     * 初始化背景 PS:请在应用的Application的 onCreate() 方法中调用此方法
+     * @see ToastUtil#initBackgroundColor 二者调用一个即可 重复调用后果自负
+     * @param resId 背景资源ID 一般是shape
+     */
+    public static void initBackground(int resId) {
+        if(bgColorID != -1) {
+            throw new RuntimeException("已经初始化过了背景");
+        }
+        bgResID = resId;
+    }
+
+    /**
+     * 初始化背景 PS:请在应用的Application的 onCreate() 方法中调用此方法
+     * @see ToastUtil#initBackground  二者调用一个即可 重复调用后果自负
+     * @param colorId 背景颜色ID
+     */
+    public static void initBackgroundColor(int colorId) {
+        if(bgResID != -1) {
+            throw new RuntimeException("已经初始化过了背景");
+        }
+        bgColorID = colorId;
     }
 
     /**
@@ -62,14 +90,14 @@ public final class ToastUtil {
         show(context, text, 0);
     }
     public static void debugShow(Context context,CharSequence text){
-        Toast.makeText(context,"测试阶段才会显示的内容\\n"+text,Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,text,Toast.LENGTH_SHORT).show();
     }
     public static void show(Context context, CharSequence text, int gravity) {
         show(context, text, gravity, 0, 0);
     }
 
     public static void show(Context context, int textId, int gravity, int xOffset, int yOffset) {
-        show(context, context.getString(textId), gravity, 0, 0);
+        show(context, context.getString(textId), gravity, xOffset, yOffset);
     }
     public static void show(Context context, CharSequence text, int gravity, int xOffset, int yOffset) {
         instance(context);
@@ -136,7 +164,7 @@ public final class ToastUtil {
     }
 
     public static void showWithIco(Context context, CharSequence text,int ico, int gravity, int xOffset, int yOffset) {
-        showWithIco(context, text, context.getResources().getDrawable(ico), gravity, 0, 0);
+        showWithIco(context, text, context.getResources().getDrawable(ico), gravity, xOffset, yOffset);
     }
     public static void showWithIco(Context context, CharSequence text,Drawable drawable, int gravity, int xOffset, int yOffset) {
         instance(context);
@@ -163,9 +191,18 @@ public final class ToastUtil {
         if(mToastView == null){
             mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
             mToastView = (LinearLayout) mToast.getView();
+
+            if(bgColorID != -1){
+                mToastView.setBackgroundColor(bgColorID);
+            }
+            if(bgResID != -1){
+                mToastView.setBackgroundResource(bgResID);
+            }
+
             mToastIco = new ImageView(context);
 
-            mToastView.setGravity(Gravity.CENTER);
+            TextView msg = (TextView) mToastView.findViewById(android.R.id.message);
+            msg.setGravity(Gravity.CENTER);
 
             mToastView.addView(mToastIco,0);
         }else {

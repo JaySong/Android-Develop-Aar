@@ -1,9 +1,11 @@
 package com.qjay.android_widget.recyclerview;
 
+import android.graphics.drawable.Drawable;
 import android.support.annotation.IdRes;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -30,6 +32,22 @@ public class SuperViewHolder extends RecyclerView.ViewHolder{
     public SuperViewHolder setText(@IdRes int viewId,String text) {
         TextView view = getView(viewId);
         view.setText(text);
+        return this;
+    }
+
+    public SuperViewHolder setImageResource(int viewId, int drawable) {
+        ImageView view = getView(viewId);
+        view.setImageResource(drawable);
+        return this;
+    }
+
+    public SuperViewHolder setTextViewDrawableRight(int viewId, Drawable drawable) {
+        TextView tv = getView(viewId);
+        if(drawable == null){
+            return this;
+        }
+        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+        tv.setCompoundDrawables(null, null, drawable, null);
         return this;
     }
 }

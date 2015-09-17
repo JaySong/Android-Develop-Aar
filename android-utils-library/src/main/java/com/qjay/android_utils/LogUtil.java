@@ -70,19 +70,19 @@ public class LogUtil {
     }
     private static String getFileLineMethod() {
         StackTraceElement traceElement = ((new Exception()).getStackTrace())[2];
-        StringBuffer toStringBuffer = new StringBuffer("[")
+        StringBuilder sb = new StringBuilder("[")
                 .append(traceElement.getFileName()).append(" | ")
                 .append(traceElement.getLineNumber()).append(" | ")
                 .append(traceElement.getMethodName()).append("]");
-        return toStringBuffer.toString();
+        return sb.toString();
     }
 
     private static String getLineMethod() {
         StackTraceElement traceElement = ((new Exception()).getStackTrace())[2];
-        StringBuffer toStringBuffer = new StringBuffer("[")
+        StringBuilder sb = new StringBuilder("[")
                 .append(traceElement.getLineNumber()).append(" | ")
                 .append(traceElement.getMethodName()).append("]");
-        return toStringBuffer.toString();
+        return sb.toString();
     }
 
     private static String _FILE_() {

@@ -12,7 +12,7 @@ import android.view.ViewGroup;
  */
 public class SuperLinearLayoutManager extends LinearLayoutManager {
     private boolean mIsAutoHeight;
-    private int mDividerSpace;
+    private int mDividerSpace = 0;
 
     public SuperLinearLayoutManager(Context context) {
         this(context, false,0);
@@ -45,50 +45,23 @@ public class SuperLinearLayoutManager extends LinearLayoutManager {
     @Override
     public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state, int widthSpec, int heightSpec) {
         if (mIsAutoHeight) {
-//            final int widthMode = View.MeasureSpec.getMode(widthSpec);
-            final int heightMode = View.MeasureSpec.getMode(heightSpec);
-//            final int widthSize = View.MeasureSpec.getSize(widthSpec);
-            final int heightSize = View.MeasureSpec.getSize(heightSpec);
-//            int width = 0;
             int height = 0;
             int itemCount = getItemCount();
             for (int i = 0; i < itemCount; i++) {
-                measureScrapChild(recycler, i,
+                 measureScrapChild(recycler, i,
                         View.MeasureSpec.makeMeasureSpec(i, View.MeasureSpec.UNSPECIFIED),
                         View.MeasureSpec.makeMeasureSpec(i, View.MeasureSpec.UNSPECIFIED));
                 View childAt = recycler.getViewForPosition(i);
                 // TODO 这里的算法还需要重新设计
 
-//                int decoratedMeasuredWidth = getDecoratedMeasuredWidth(childAt);
                 int decoratedMeasuredHeight = getDecoratedMeasuredHeight(childAt);
+
                 if (getOrientation() == HORIZONTAL) {
-//                        width = width + decoratedMeasuredWidth + mDividerSpace;
                     height = height >= decoratedMeasuredHeight ? height : decoratedMeasuredHeight;
-//                    if (i == 0) {
-//                        height = mMeasuredDimension[1] ;
-//                    }
                 } else {
                         height = height + decoratedMeasuredHeight + mDividerSpace;
-//                    width = width >= decoratedMeasuredWidth ? width : decoratedMeasuredWidth;
-//                    if (i == 0) {
-//                        width = mMeasuredDimension[0];
-//                    }
                 }
             }
-//            switch (widthMode) {
-//                case View.MeasureSpec.EXACTLY:
-////                    width = widthSize;
-//                case View.MeasureSpec.AT_MOST:
-//                case View.MeasureSpec.UNSPECIFIED:
-//            }
-
-            switch (heightMode) {
-                case View.MeasureSpec.EXACTLY:
-                    height = heightSize;
-                case View.MeasureSpec.AT_MOST:
-                case View.MeasureSpec.UNSPECIFIED:
-            }
-//            widthSpec = View.MeasureSpec.makeMeasureSpec(width, widthMode);
             heightSpec = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);
         }
         super.onMeasure(recycler, state, widthSpec, heightSpec);
@@ -104,9 +77,8 @@ public class SuperLinearLayoutManager extends LinearLayoutManager {
             int childHeightSpec = ViewGroup.getChildMeasureSpec(heightSpec,
                     getPaddingTop() + getPaddingBottom(), p.height);
             view.measure(childWidthSpec, childHeightSpec);
-//            measuredDimension[0] = view.getMeasuredWidth() + p.leftMargin + p.rightMargin;
-//            measuredDimension[1] = view.getMeasuredHeight() + p.bottomMargin + p.topMargin;
             recycler.recycleView(view);
+
         }
     }
 
