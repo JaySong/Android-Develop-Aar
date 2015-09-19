@@ -16,6 +16,7 @@ import android.widget.Toast;
  */
 public final class ToastUtil {
 
+    private static final boolean IS_DEBUG = false;
     private static Toast mToast;
     private static LinearLayout mToastView;
     private static ImageView mToastIco;
@@ -90,7 +91,10 @@ public final class ToastUtil {
         show(context, text, 0);
     }
     public static void debugShow(Context context,CharSequence text){
-        Toast.makeText(context,text,Toast.LENGTH_SHORT).show();
+        if(IS_DEBUG){
+            Toast.makeText(context,text,Toast.LENGTH_SHORT).show();
+        }
+
     }
     public static void show(Context context, CharSequence text, int gravity) {
         show(context, text, gravity, 0, 0);

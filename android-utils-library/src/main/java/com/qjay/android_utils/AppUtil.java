@@ -126,9 +126,9 @@ public final class AppUtil {
     public static int webViewWidth(Context context, float width) {
         int webWiewWidth = 0;
         final float scale = context.getResources().getDisplayMetrics().density;
-        if(width>=1536){
+        if (width >= 1536) {
             webWiewWidth = (int) (width / scale + 0.5) / 2;
-        }else if (width >= 1080) {
+        } else if (width >= 1080) {
             webWiewWidth = (int) (width / scale + 0.5) / 3 + 12;
         } else if (width <= 720) {
             webWiewWidth = (int) (width / scale + 0.5) / 4;
@@ -180,6 +180,17 @@ public final class AppUtil {
                 }
             }
         }, 300);
+    }
+
+    public static boolean isHideKey(Activity context, final EditText editText) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        if (imm.hideSoftInputFromWindow(editText.getWindowToken(), 0)) {
+            imm.showSoftInput(editText, 0);
+                return true; //软键盘已弹出
+        } else {
+            return false;
+            //软键盘未弹出
+        }
     }
 
     public static void showKey(final Activity context, final EditText editText) {
